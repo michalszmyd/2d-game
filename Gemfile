@@ -19,7 +19,8 @@ gem 'devise'
 group :development, :test do
   gem 'rubycritic'
   gem 'simplecov', :require => false
-  gem 'rspec'
+  gem 'rspec-rails', '~> 3.7'
+  gem 'factory_bot'
   gem 'bullet'
   gem 'brakeman'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
