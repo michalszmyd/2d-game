@@ -15,12 +15,18 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
+gem 'pry-rails'
+gem 'rubycritic'
+
+group :test do
+  gem 'rspec-rails', '~> 3.4'
+  gem 'shoulda-matchers', '~> 3.1'
+end
 
 group :development, :test do
-  gem 'rubycritic'
   gem 'simplecov', :require => false
-  gem 'rspec-rails', '~> 3.7'
-  gem 'factory_bot'
+  gem 'factory_girl_rails'
+  gem 'faker'
   gem 'bullet'
   gem 'brakeman'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
