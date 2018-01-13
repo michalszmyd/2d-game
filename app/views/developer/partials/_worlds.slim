@@ -14,5 +14,6 @@ table.table.table-striped
         td= world.height
         td= world.environments.count
         td
+          = link_to 'World edit', world_editor_path(world.id), class: 'btn btn-primary'
           = link_to 'Edit', edit_world_path(world), class: 'btn btn-default'
           = link_to 'Delete', world, class: 'btn btn-danger', method: :delete

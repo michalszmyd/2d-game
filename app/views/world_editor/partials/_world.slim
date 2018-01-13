@@ -1,0 +1,3 @@
+.world data-world-id="#{world.id}" style="width: #{world.width}px; height: #{world.height}px;"
+  - world.world_environments.each do |environment|
+    = render partial: 'world_editor/partials/world_environment', locals: { environment: environment }

@@ -1,0 +1,13 @@
+.env-items-bar.container
+  h4
+    | World elements
+    span style="float: right; cursor: pointer;" class="glyphicon glyphicon-chevron-down" data-toggle='collapse' data-target='#env-items'
+  #env-items.collapse
+    input type="text" class="form-control" placeholder="Type to search"
+    - @presenter.environments.each do |env|
+      .env-item
+        = env.name
+
+.btn.btn-primary Save map
+
+= render partial: 'world_editor/partials/world', locals: { world: @presenter.world }

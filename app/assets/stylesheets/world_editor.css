@@ -1,0 +1,31 @@
+.world{
+  border: 3px dotted black;
+}
+
+.world .env{
+  position: relative;
+  background-color: red;
+  z-index: 100;
+  width: 32px;
+  height: 32px;
+}
+
+.env-items-bar{
+  width: 32%;
+  z-index: 150;
+  position: fixed;
+  right: 0;
+  top: 0;
+  border: 3px solid #eaeaea;
+  background-color: #fdfdfd;
+}
+
+.env-items-bar .env-item{
+  padding: 2%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.env-items-bar .env-item:hover{
+  color: white;
+  background-color: #2c2c2c;
+}
