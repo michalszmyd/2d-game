@@ -3,5 +3,6 @@ class Hero < ApplicationRecord
   belongs_to :user
   has_one :bag, dependent: :destroy
 
-  validates :hero_role, :user, :strength, :agility, :inteligence, presence: true
+  validates :hero_role, :user, :strength,
+            :agility, :inteligence, presence: true
 end

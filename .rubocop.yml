@@ -1,8 +1,13 @@
+Style/Documentation:
+  Enabled: false
+
 AllCops:
   Exclude:
     - db/schema.rb
     - db/seeds.rb
     - db/migrate/*.rb
+    - spec/rails*
+    - spec/spec*
     - config/initializers/devise.rb
     - config/*
     - config/*/*
@@ -12,3 +17,4 @@ AllCops:
     - test/test_helper*
     - test/application*
     - Rakefile
+    - Gemfile
