@@ -16,6 +16,7 @@
 ._.DS_Store
 coverage
 test
+public/system/*
 
 /node_modules
 /yarn-error.log

@@ -6,6 +6,7 @@
     input type="text" class="form-control" placeholder="Type to search"
     - @presenter.environments.each do |env|
       .env-item
+        = image_tag env.image.url(:normal)
         = env.name
 
 .btn.btn-primary Save map

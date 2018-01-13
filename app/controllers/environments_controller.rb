@@ -40,6 +40,6 @@ class EnvironmentsController < ApplicationController
   end
 
   def environment_params
-    params.require(:environment).permit(:name)
+    params.require(:environment).permit(:name, :image)
   end
 end

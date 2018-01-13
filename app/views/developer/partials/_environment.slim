@@ -1,10 +1,12 @@
 table.table.table-striped
   thead
     tr
+      th Image
       th Name
   tbody
     - @presenter.environment.each do |environment|
       tr
+        td= image_tag environment.image.url(:normal)
         td= environment.name
         td
           = link_to 'Edit', edit_environment_path(environment), class: 'btn btn-default'

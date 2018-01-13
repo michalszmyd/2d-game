@@ -20,6 +20,7 @@ gem 'rubocop'
 gem 'slim'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
+gem 'paperclip'
 
 group :test do
   gem 'rspec-rails', '~> 3.4'

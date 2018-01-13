@@ -3,5 +3,6 @@
   = form_for @environment do |f|
     .form-group
       = f.label :name
+      = f.file_field :image
       = f.text_field :name, class: 'form-control'
     = f.submit
