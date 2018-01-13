@@ -1,6 +1,8 @@
 .jumbotron
   .container
-    h2 Welcome #{current_user.email} currently playing as null #{link_to 'go to game', root_path}
+    h2 Welcome #{current_user.email}
+    - if current_user.selected_hero
+      | currently playing as #{current_user.selected_hero.name} #{link_to 'launch game', root_path}
     h3 Select your chamion or #{link_to 'create new', root_path}
 
     .heroes-list
