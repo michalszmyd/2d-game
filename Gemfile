@@ -18,6 +18,8 @@ gem 'devise'
 gem 'pry-rails'
 gem 'rubocop'
 gem 'slim'
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'jquery-rails'
 
 group :test do
   gem 'rspec-rails', '~> 3.4'
