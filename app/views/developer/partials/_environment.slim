@@ -7,5 +7,5 @@ table.table.table-striped
       tr
         td= environment.name
         td
-          .btn.btn-default Edit
-          .btn.btn-default Delete
+          = link_to 'Edit', edit_environment_path(environment), class: 'btn btn-default'
+          = link_to 'Delete', environment, class: 'btn btn-danger', method: :delete

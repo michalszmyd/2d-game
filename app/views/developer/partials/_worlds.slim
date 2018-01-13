@@ -8,5 +8,5 @@ table.table.table-striped
       tr
         td= world.name
         td
-          .btn.btn-default Edit
-          .btn.btn-default Delete
+          = link_to 'Edit', edit_world_path(world), class: 'btn btn-default'
+          = link_to 'Delete', world, class: 'btn btn-danger', method: :delete

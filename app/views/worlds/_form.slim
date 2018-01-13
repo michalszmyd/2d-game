@@ -1,0 +1,7 @@
+.container
+  h1 New world
+  = form_for @world do |f|
+    .form-group
+      = f.label :name
+      = f.text_field :name, class: 'form-control'
+    = f.submit

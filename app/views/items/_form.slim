@@ -1,0 +1,20 @@
+.container
+  h1 New item
+  = form_for @item do |f|
+    .form-group
+      = f.label :name
+      = f.text_field :name, class: 'form-control'
+    .form-group
+      = f.label :wear_place
+      = f.text_field :wear_place, class: 'form-control'
+    .form-group
+      = f.label :damage
+      = f.number_field :damage, class: 'form-control'
+    .form-group
+      = f.label :mana
+      = f.number_field :mana, class: 'form-control'
+    .form-group
+      = f.label :armor
+      = f.number_field :armor, class: 'form-control'
+    = select('item', 'hero_role_id', HeroRole.all.map { |r| [r.name, r.id] })
+    = f.submit

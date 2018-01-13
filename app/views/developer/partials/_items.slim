@@ -18,5 +18,5 @@ table.table.table-striped
         td= item.armor
         td= item.hero_role.name
         td
-          .btn.btn-default Edit
-          .btn.btn-default Delete
+          = link_to 'Edit', edit_item_path(item), class: 'btn btn-default'
+          = link_to 'Delete', item, class: 'btn btn-danger', method: :delete

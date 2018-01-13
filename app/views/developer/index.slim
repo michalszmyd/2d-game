@@ -5,28 +5,32 @@
     h3
       | Worlds list
       .btn.btn-default data-toggle='collapse' data-target='#worlds' Show
-    - if @presenter.worlds.any?
-      #worlds.collapse
+    #worlds.collapse
+      = link_to 'New', new_world_path, class: 'btn btn-primary'
+      - if @presenter.worlds.any?
         = render partial: 'developer/partials/worlds'
   .items
     h3
       | Items list
       .btn.btn-default data-toggle='collapse' data-target='#items' Show
-    - if @presenter.items.any?
-      #items.collapse
+    #items.collapse
+      = link_to 'New', new_item_path, class: 'btn btn-primary'
+      - if @presenter.items.any?
         = render partial: 'developer/partials/items'
   .environment
     h3
       | Environment list
       .btn.btn-default data-toggle='collapse' data-target='#environment' Show
-    - if @presenter.environment.any?
-      #environment.collapse
+    #environment.collapse
+      = link_to 'New', new_environment_path, class: 'btn btn-primary'
+      - if @presenter.environment.any?
         = render partial: 'developer/partials/environment'
   .hero-roles
     h3
      | Hero Roles list
      .btn.btn-default data-toggle='collapse' data-target='#hero-roles' Show
-    - if @presenter.hero_roles.any?
-      #hero-roles.collapse
+    #hero-roles.collapse
+      = link_to 'New', new_hero_role_path, class: 'btn btn-primary'
+      - if @presenter.hero_roles.any?
         = render partial: 'developer/partials/hero_roles'
   hr /
