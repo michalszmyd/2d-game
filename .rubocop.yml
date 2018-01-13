@@ -1,0 +1,14 @@
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - db/seeds.rb
+    - db/migrate/*.rb
+    - config/initializers/devise.rb
+    - config/*
+    - config/*/*
+    - bin/*
+    - app/*/application_*
+    - app/*/user*
+    - test/test_helper*
+    - test/application*
+    - Rakefile

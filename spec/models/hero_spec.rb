@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Hero, type: :model do
-  describe 'validates' do
+  describe 'hero validates' do
     it { is_expected.to validate_presence_of :user }
     it { is_expected.to validate_presence_of :hero_role }
     it { is_expected.to validate_presence_of :strength }
@@ -9,7 +9,7 @@ RSpec.describe Hero, type: :model do
     it { is_expected.to validate_presence_of :inteligence }
   end
 
-  describe 'assoc' do
+  describe 'hero assoc' do
     it { is_expected.to belong_to :hero_role }
     it { is_expected.to belong_to :user }
   end
