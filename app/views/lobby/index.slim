@@ -1,0 +1,13 @@
+.jumbotron
+  .container
+    h2 Welcome #{current_user.email} currently playing as null #{link_to 'go to game', root_path}
+    h3 Select your chamion or #{link_to 'create new', root_path}
+
+    .heroes-list
+      - @user_heroes.each do |hero|
+        .hero
+          p name: #{hero.name}
+          p strength: #{hero.strength}
+          p agility: #{hero.agility}
+          p inteligence: #{hero.inteligence}
+          .btn.btn-primary.select-champion*{'data-champion-id' => hero.id} Play now
