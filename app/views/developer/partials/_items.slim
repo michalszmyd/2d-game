@@ -1,0 +1,22 @@
+table.table.table-striped
+  thead
+    tr
+      th Name
+      th Wear place
+      th Damage
+      th Mana
+      th Armor
+      th For
+      th Actions
+  tbody
+    - @presenter.items.each do |item|
+      tr
+        td= item.name
+        td= item.wear_place
+        td= item.damage
+        td= item.mana
+        td= item.armor
+        td= item.hero_role.name
+        td
+          .btn.btn-default Edit
+          .btn.btn-default Delete

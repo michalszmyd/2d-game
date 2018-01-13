@@ -1,0 +1,32 @@
+.container
+  h1 Data manage
+  hr /
+  .worlds
+    h3
+      | Worlds list
+      .btn.btn-default data-toggle='collapse' data-target='#worlds' Show
+    - if @presenter.worlds.any?
+      #worlds.collapse
+        = render partial: 'developer/partials/worlds'
+  .items
+    h3
+      | Items list
+      .btn.btn-default data-toggle='collapse' data-target='#items' Show
+    - if @presenter.items.any?
+      #items.collapse
+        = render partial: 'developer/partials/items'
+  .environment
+    h3
+      | Environment list
+      .btn.btn-default data-toggle='collapse' data-target='#environment' Show
+    - if @presenter.environment.any?
+      #environment.collapse
+        = render partial: 'developer/partials/environment'
+  .hero-roles
+    h3
+     | Hero Roles list
+     .btn.btn-default data-toggle='collapse' data-target='#hero-roles' Show
+    - if @presenter.hero_roles.any?
+      #hero-roles.collapse
+        = render partial: 'developer/partials/hero_roles'
+  hr /
