@@ -12,5 +12,6 @@ RSpec.describe Hero, type: :model do
   describe 'hero assoc' do
     it { is_expected.to belong_to :hero_role }
     it { is_expected.to belong_to :user }
+    it { is_expected.to have_one :bag }
   end
 end
