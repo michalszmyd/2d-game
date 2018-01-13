@@ -9,7 +9,7 @@ class EnvironmentsController < ApplicationController
   def edit; end
 
   def create
-    @environment = environment.new(environment_params)
+    @environment = Environment.new(environment_params)
     if @environment.save
       redirect_to developer_index_path
     else
