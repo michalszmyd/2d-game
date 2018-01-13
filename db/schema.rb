@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180112182058) do
+ActiveRecord::Schema.define(version: 20180113094428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,18 @@ ActiveRecord::Schema.define(version: 20180112182058) do
     t.index ["user_id"], name: "index_heros_on_user_id"
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "wear_place", null: false
+    t.integer "damage", default: 0, null: false
+    t.integer "mana", default: 0, null: false
+    t.integer "armor", default: 0, null: false
+    t.bigint "hero_role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hero_role_id"], name: "index_items_on_hero_role_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -53,4 +65,5 @@ ActiveRecord::Schema.define(version: 20180112182058) do
 
   add_foreign_key "heros", "hero_roles"
   add_foreign_key "heros", "users"
+  add_foreign_key "items", "hero_roles"
 end
