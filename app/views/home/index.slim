@@ -1,0 +1,13 @@
+.jubmotron
+  .container
+    .title
+      h1 Welcome
+      p= link_to 'Register Here', new_user_registration_path
+
+  .container
+    .description
+      h3 Current chapion classes included
+      ul
+      - @champion_classes.each do |role|
+        li= role.name
+        - if @champion_classes.any?
