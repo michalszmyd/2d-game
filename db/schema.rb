@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180114125930) do
+ActiveRecord::Schema.define(version: 20180114133528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,8 +59,12 @@ ActiveRecord::Schema.define(version: 20180114125930) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "current", default: false, null: false
+    t.bigint "world_id", default: 4
+    t.integer "position_x", default: 10
+    t.integer "position_y", default: 10
     t.index ["hero_role_id"], name: "index_heros_on_hero_role_id"
     t.index ["user_id"], name: "index_heros_on_user_id"
+    t.index ["world_id"], name: "index_heros_on_world_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -122,6 +126,7 @@ ActiveRecord::Schema.define(version: 20180114125930) do
   add_foreign_key "bags", "heros"
   add_foreign_key "heros", "hero_roles"
   add_foreign_key "heros", "users"
+  add_foreign_key "heros", "worlds"
   add_foreign_key "items", "hero_roles"
   add_foreign_key "world_environments", "environments"
   add_foreign_key "world_environments", "worlds"

@@ -1,0 +1,10 @@
+.eq-modal
+  - @presenter.playing_hero.items.each do |item|
+    = item.name
+.game-world data-world-id="#{@presenter.world.id}" style="width: #{@presenter.world.width}px; height: #{@presenter.world.height}px; background-image: url(#{@presenter.world.background.url});"
+  .environments
+    - @presenter.world.world_environments.each do |environment|
+      = render partial: 'game/partials/world_environment', locals: { environment: environment }
+  .players
+    - @presenter.world.heroes.each do |player|
+      = render partial: 'game/partials/player', locals: { player: player }
