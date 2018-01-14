@@ -1,4 +1,7 @@
 class World < ApplicationRecord
+  has_attached_file :background, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :background, content_type: /\Aimage\/.*\z/
+
   has_many :world_environments, dependent: :destroy
   has_many :environments, through: :world_environments
 

@@ -40,6 +40,6 @@ class WorldsController < ApplicationController
   end
 
   def world_params
-    params.require(:world).permit(:name, :height, :width)
+    params.require(:world).permit(:name, :height, :width, :background)
   end
 end
