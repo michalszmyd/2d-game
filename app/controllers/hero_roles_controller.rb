@@ -40,6 +40,6 @@ class HeroRolesController < ApplicationController
   end
 
   def hero_role_params
-    params.require(:hero_role).permit(:name)
+    params.require(:hero_role).permit(:name, :template)
   end
 end
