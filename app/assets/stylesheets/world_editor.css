@@ -3,7 +3,7 @@
 }
 
 .world .env{
-  position: relative;
+  position: absolute;
   background-color: red;
   z-index: 100;
   width: 32px;

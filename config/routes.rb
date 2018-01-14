@@ -8,5 +8,9 @@ Rails.application.routes.draw do
   resources :worlds, only: [:new, :create, :edit, :update, :destroy]
   resources :hero_roles, only: [:new, :create, :edit, :update, :destroy]
   resources :environments, only: [:new, :create, :edit, :update, :destroy]
-  resources :world_editor, only: :show
+  resources :world_editor, only: :show do
+    member do
+      post :save_env
+    end
+  end
 end

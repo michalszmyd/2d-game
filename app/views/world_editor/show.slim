@@ -1,3 +1,6 @@
+- content_for :javascript_includes do
+  = javascript_include_tag 'world_edit'
+
 .env-items-bar.container
   h4
     | World elements
@@ -5,10 +8,10 @@
   #env-items.collapse
     input type="text" class="form-control" placeholder="Type to search"
     - @presenter.environments.each do |env|
-      .env-item
+      .env-item data-id="#{env.id}"
         = image_tag env.image.url(:normal)
         = env.name
 
-.btn.btn-primary Save map
+.btn.btn-primary.save-world Save map
 
 = render partial: 'world_editor/partials/world', locals: { world: @presenter.world }
