@@ -11,7 +11,7 @@ RSpec.describe Item, type: :model do
 
   describe 'hero assoc' do
     it { is_expected.to belong_to :hero_role }
-    it { is_expected.to have_many(:bag_items) }
-    it { is_expected.to have_many(:bags).through(:bag_items) }
+    it { is_expected.to have_many(:hero_items) }
+    it { is_expected.to have_many(:heroes).through(:bag_items) }
   end
 end

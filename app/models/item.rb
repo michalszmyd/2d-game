@@ -4,6 +4,6 @@ class Item < ApplicationRecord
   validates :name, :wear_place, :damage,
             :mana, :armor, :hero_role, presence: true
 
-  has_many :bag_items, dependent: :destroy
-  has_many :bags, through: :bag_items
+  has_many :hero_items, dependent: :destroy
+  has_many :heroes, through: :hero_items
 end
