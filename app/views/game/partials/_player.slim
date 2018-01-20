@@ -1,1 +1,2 @@
-.player data-id="#{player.id}"
+.player data-id="#{player.id}" style="left: #{player.position_x}px; top: #{player.position_y}px" id="#{'current_user' if @presenter.playing_hero.id == player.id}"
+  = image_tag player.hero_role.template.url(:normal)

@@ -8,6 +8,12 @@ class World < ApplicationRecord
 
   validates :name, :required_level, presence: true
 
+  def world_objects
+    Environment.left_joins(:world_environments)
+               .where('world_environments.world_id = ?', id)
+               .select('environments.*, world_environments.position_x, world_environments.position_y')
+  end
+
   def insert_environment_elements(elements)
     elements.each do |_key, item|
       world_environments.create(

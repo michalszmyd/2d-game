@@ -2,9 +2,12 @@ body {
   padding: 0;
 }
 
-.game-world .env{
+.game-world {
   position: fixed;
-  background-color: red;
+}
+
+.game-world .env{
+  position: absolute;
   z-index: 100;
   width: 32px;
   height: 32px;
@@ -28,4 +31,16 @@ body {
 .env-items-bar .env-item:hover{
   color: white;
   background-color: #2c2c2c;
+}
+
+.player{
+  position: fixed;
+  z-index: 250;
+}
+
+.eq{
+  position: fixed;
+  top: 50vh;
+  left: 50%;
+  background-color: black;
 }

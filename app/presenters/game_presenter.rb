@@ -14,7 +14,7 @@ class GamePresenter
   end
 
   def world_objects
-    @world.world_environments
+    @world.world_objects
   end
 
   def inventory
