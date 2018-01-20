@@ -8,6 +8,9 @@
   .environments
     - @presenter.world_objects.each do |environment|
       = render partial: 'game/partials/world_environment', locals: { environment: environment }
+  .teleports
+    - @presenter.world_teleports.each do |teleport|
+      = render partial: 'game/partials/world_teleport', locals: { teleport: teleport }
   .players
     - @presenter.world.heroes.each do |player|
       = render partial: 'game/partials/player', locals: { player: player }

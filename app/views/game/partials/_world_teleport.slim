@@ -1,0 +1,4 @@
+.teleport style="left: #{teleport.position_x}px; top: #{teleport.position_y}px;"
+  = image_tag teleport.image.url(:normal)
+  .info
+    p Teleport to: #{teleport.world.name}

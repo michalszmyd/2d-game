@@ -7,11 +7,16 @@
     span style="float: right; cursor: pointer;" class="glyphicon glyphicon-chevron-down" data-toggle='collapse' data-target='#env-items'
   #env-items.collapse
     input type="text" class="form-control" placeholder="Type to search"
+    h4 Environments
     - @presenter.environments.each do |env|
       .env-item data-id="#{env.id}"
         = image_tag env.image.url(:normal)
         = env.name
-
+    h4 Teleports
+    - @presenter.teleports.each do |teleport|
+      .teleport-item data-id="#{teleport.id}"
+        = image_tag teleport.image.url(:normal)
+        = teleport.name
 .btn.btn-primary.save-world Save map
 
 = render partial: 'world_editor/partials/world', locals: { world: @presenter.world }

@@ -23,8 +23,16 @@
       .btn.btn-default data-toggle='collapse' data-target='#environment' Show
     #environment.collapse
       = link_to 'New', new_environment_path, class: 'btn btn-primary'
-      - if @presenter.environment.any?
+      - if @presenter.environments.any?
         = render partial: 'developer/partials/environment'
+  .teleports
+    h3
+      | Teleports list
+      .btn.btn-default data-toggle='collapse' data-target='#teleports' Show
+    #teleports.collapse
+      = link_to 'New', new_teleport_path, class: 'btn btn-primary'
+      - if @presenter.teleports.any?
+        = render partial: 'developer/partials/teleports'
   .hero-roles
     h3
      | Hero Roles list

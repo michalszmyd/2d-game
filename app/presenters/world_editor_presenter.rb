@@ -10,4 +10,12 @@ class WorldEditorPresenter
   def environments
     @environments ||= Environment.all
   end
+
+  def teleports
+    @teleports ||= Teleport.all
+  end
+
+  def world_environment
+    @world.world_objects
+  end
 end

@@ -1,0 +1,15 @@
+table.table.table-striped
+  thead
+    tr
+      th Image
+      th Name
+      th Redirect to
+  tbody
+    - @presenter.teleports.each do |teleport|
+      tr
+        td= image_tag teleport.image.url(:normal)
+        td= teleport.name
+        td= teleport.world.name
+        td
+          = link_to 'Edit', edit_teleport_path(teleport), class: 'btn btn-default'
+          = link_to 'Delete', teleport, class: 'btn btn-danger', method: :delete

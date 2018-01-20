@@ -4,7 +4,7 @@ table.table.table-striped
       th Image
       th Name
   tbody
-    - @presenter.environment.each do |environment|
+    - @presenter.environments.each do |environment|
       tr
         td= image_tag environment.image.url(:normal)
         td= environment.name

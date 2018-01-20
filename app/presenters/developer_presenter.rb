@@ -7,8 +7,12 @@ class DeveloperPresenter
     Item.all
   end
 
-  def environment
+  def environments
     Environment.all
+  end
+
+  def teleports
+    Teleport.all
   end
 
   def hero_roles

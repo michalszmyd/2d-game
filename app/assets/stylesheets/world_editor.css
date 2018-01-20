@@ -2,7 +2,8 @@
   border: 3px dotted black;
 }
 
-.world .env{
+.world .env,
+.world .teleport{
   position: absolute;
   background-color: red;
   z-index: 100;
@@ -20,12 +21,14 @@
   background-color: #fdfdfd;
 }
 
-.env-items-bar .env-item{
+.env-items-bar .env-item,
+.env-items-bar .teleport-item{
   padding: 2%;
   box-sizing: border-box;
   cursor: pointer;
 }
-.env-items-bar .env-item:hover{
+.env-items-bar .env-item:hover,
+.env-items-bar .teleport-item:hover{
   color: white;
   background-color: #2c2c2c;
 }

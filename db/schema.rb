@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180114170146) do
+ActiveRecord::Schema.define(version: 20180120094315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,18 @@ ActiveRecord::Schema.define(version: 20180114170146) do
     t.index ["hero_role_id"], name: "index_items_on_hero_role_id"
   end
 
+  create_table "teleports", force: :cascade do |t|
+    t.string "name", null: false
+    t.bigint "world_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["world_id"], name: "index_teleports_on_world_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -121,6 +133,17 @@ ActiveRecord::Schema.define(version: 20180114170146) do
     t.index ["world_id"], name: "index_world_environments_on_world_id"
   end
 
+  create_table "world_teleports", force: :cascade do |t|
+    t.bigint "world_id", null: false
+    t.bigint "teleport_id", null: false
+    t.integer "position_x", null: false
+    t.integer "position_y", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["teleport_id"], name: "index_world_teleports_on_teleport_id"
+    t.index ["world_id"], name: "index_world_teleports_on_world_id"
+  end
+
   create_table "worlds", force: :cascade do |t|
     t.string "name", null: false
     t.integer "required_level", default: 1, null: false
@@ -143,6 +166,9 @@ ActiveRecord::Schema.define(version: 20180114170146) do
   add_foreign_key "heros", "users"
   add_foreign_key "heros", "worlds"
   add_foreign_key "items", "hero_roles"
+  add_foreign_key "teleports", "worlds"
   add_foreign_key "world_environments", "environments"
   add_foreign_key "world_environments", "worlds"
+  add_foreign_key "world_teleports", "teleports"
+  add_foreign_key "world_teleports", "worlds"
 end

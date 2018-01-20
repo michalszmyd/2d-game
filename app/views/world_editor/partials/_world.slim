@@ -1,3 +1,5 @@
 .world data-world-id="#{world.id}" style="width: #{world.width}px; height: #{world.height}px; background-image: url(#{world.background.url});"
-  - world.world_environments.each do |environment|
+  - world.environment_objects.each do |environment|
     = render partial: 'world_editor/partials/world_environment', locals: { environment: environment }
+  - world.teleport_objects.each do |teleport|
+    = render partial: 'world_editor/partials/world_teleport', locals: { teleport: teleport }

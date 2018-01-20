@@ -1,0 +1,13 @@
+.container
+  h1 New world
+  = form_for @teleport do |f|
+    .form-group
+      = f.label :name
+      = f.file_field :image
+    .form-group
+      = f.label :name
+      = f.text_field :name, class: 'form-control'
+    .form-group
+      = f.label :world
+      = f.select(:world_id, World.all.map{ |w| [w.name, w.id] }, {}, { class: 'form-control' })
+    = f.submit
