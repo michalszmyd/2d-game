@@ -1,10 +1,8 @@
 class WorldEditorPresenter
+  attr_reader :world
+
   def initialize(world_id)
     @world = World.find(world_id)
-  end
-
-  def world
-    @world
   end
 
   def environments
@@ -16,6 +14,6 @@ class WorldEditorPresenter
   end
 
   def world_environment
-    @world.world_objects
+    @environment_values ||= @world.world_objects
   end
 end

@@ -41,6 +41,7 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :wear_place, :damage,
-                                 :mana, :armor, :hero_role_id)
+                                 :mana, :armor, :hero_role_id,
+                                 :image)
   end
 end
